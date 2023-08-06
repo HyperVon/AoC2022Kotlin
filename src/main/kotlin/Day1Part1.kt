@@ -42,6 +42,12 @@ Find the Elf carrying the most Calories. How many total Calories is that Elf car
 object Day1Part1 {
     @JvmStatic
     fun main(args: Array<String>) {
+        createElfCalorieMap().maxBy { it.value }.also {
+            println("Elf carrying the most Calories is Elf ${it.key} with total calories: ${it.value}")
+        }
+    }
+
+    fun createElfCalorieMap(): MutableMap<Int, Int> {
         val lines = File("src/main/resources/Day1Part1Input.txt").readLines()
         val elfCalorieMap = mutableMapOf<Int, Int>()
         var elfNumber = 1
@@ -53,9 +59,6 @@ object Day1Part1 {
                 elfCalorieMap[elfNumber] = elfCalorieMap.getOrPut(elfNumber) { 0 } + calories
             }
         }
-
-        elfCalorieMap.maxBy { it.value }.also {
-            println("Elf carrying the most Calories is Elf ${it.key} with total calories: ${it.value}")
-        }
+        return elfCalorieMap
     }
 }
