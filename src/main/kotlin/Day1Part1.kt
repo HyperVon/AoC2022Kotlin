@@ -43,20 +43,19 @@ object Day1Part1 {
     @JvmStatic
     fun main(args: Array<String>) {
         val lines = File("src/main/resources/Day1Part1Input.txt").readLines()
-        val map = mutableMapOf<Int, Int>()
+        val elfCalorieMap = mutableMapOf<Int, Int>()
         var elfNumber = 1
         lines.forEach { line ->
             val calories = line.toIntOrNull()
             if (calories == null) {
                 elfNumber++
             } else {
-                map[elfNumber] = map.getOrPut(elfNumber) { 0 } + calories
+                elfCalorieMap[elfNumber] = elfCalorieMap.getOrPut(elfNumber) { 0 } + calories
             }
         }
 
-        map.maxBy { it.value }.also {
-            println("Elf carrying the most Calories: ${it.key}")
-            println("Total Calories: ${it.value}")
+        elfCalorieMap.maxBy { it.value }.also {
+            println("Elf carrying the most Calories is Elf ${it.key} with total calories: ${it.value}")
         }
     }
 }
