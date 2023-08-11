@@ -3,6 +3,9 @@ import Day2Part1.ROCK
 import Day2Part1.Result
 import Day2Part1.Result.*
 import Day2Part1.SCISSORS
+import Day2Part1.X
+import Day2Part1.Y
+import Day2Part1.Z
 import Day2Part1.createPairsFromFile
 import Day2Part1.myMapChoices
 import Day2Part1.myMapScores
@@ -29,9 +32,9 @@ Following the Elf's instructions for the second column, what would your total sc
 according to your strategy guide?
  */
 object Day2Part2 {
-    val secondColumnMap = mapOf("X" to Loss, "Y" to Draw, "Z" to Win)
-    val swappedMap = swap(myMapChoices)
-    val choiceMap = mapOf(
+    private val resultMap = mapOf(X to Loss, Y to Draw, Z to Win)
+    private val swappedMap = swap(myMapChoices)
+    private val choiceMap = mapOf(
         ROCK to mapOf(
             Draw to swappedMap[ROCK]!!,
             Loss to swappedMap[SCISSORS]!!,
@@ -57,11 +60,7 @@ object Day2Part2 {
     fun calculateScore() =
         createPairsFromFile()
             .sumOf { (theirChoice, myResult) ->
-                myMapScores[
-                    determineChoice(
-                        theirChoice,
-                        secondColumnMap[myResult]!!
-                    )]!! + secondColumnMap[myResult]!!.value
+                myMapScores[determineChoice(theirChoice, resultMap[myResult]!!)]!! + resultMap[myResult]!!.value
             }
 
     private fun determineChoice(theirChoice: String, result: Result): String =

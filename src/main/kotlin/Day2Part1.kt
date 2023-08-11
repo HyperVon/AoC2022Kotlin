@@ -43,12 +43,13 @@ In this example, if you were to follow the strategy guide, you would get a total
 What would your total score be if everything goes exactly according to your strategy guide?
  */
 object Day2Part1 {
-    private const val X = "X"
-    private const val Y = "Y"
-    private const val Z = "Z"
     private const val A = "A"
     private const val B = "B"
     private const val C = "C"
+
+    const val X = "X"
+    const val Y = "Y"
+    const val Z = "Z"
 
     const val ROCK = "Rock"
     const val PAPER = "Paper"
