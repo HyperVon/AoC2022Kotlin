@@ -1,5 +1,4 @@
 import Day1Part1.createCalorieMap
-import java.io.File
 
 /*
 --- Part Two ---

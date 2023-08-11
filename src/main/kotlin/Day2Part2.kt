@@ -7,7 +7,6 @@ import Day2Part1.createPairsFromFile
 import Day2Part1.myMapChoices
 import Day2Part1.myMapScores
 import Day2Part1.theirMapChoices
-import java.io.File
 
 /*
 --- Part Two ---
