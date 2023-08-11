@@ -55,7 +55,7 @@ object Day2Part1 {
     const val PAPER = "Paper"
     const val SCISSORS = "Scissors"
 
-    private const val file = "src/main/resources/Day2Part1Input.txt"
+    private const val FILE = "src/main/resources/Day2Part1Input.txt"
 
     enum class Result(val value: Int) {
         Win(6),
@@ -76,7 +76,7 @@ object Day2Part1 {
         .sumOf { (theirChoice, myChoice) -> calculateResult(myChoice, theirChoice).value + myMapScores[myChoice]!! }
 
     fun createPairsFromFile() =
-        File(file)
+        File(FILE)
             .readLines()
             .map { it.split(" ") }
             .map { it[0] to it[1] }

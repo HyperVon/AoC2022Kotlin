@@ -41,7 +41,7 @@ Find the Elf carrying the most Calories. How many total Calories is that Elf car
  */
 object Day1Part1 {
 
-    private const val file = "src/main/resources/Day1Part1Input.txt"
+    private const val FILE = "src/main/resources/Day1Part1Input.txt"
 
     @JvmStatic
     fun main(args: Array<String>) {
@@ -58,7 +58,7 @@ object Day1Part1 {
         val elfCalorieMap = mutableMapOf<Int, Int>()
         var elfNumber = 1
 
-        File(file)
+        File(FILE)
             .readLines()
             .forEach { line ->
                 val calories = line.toIntOrNull()
