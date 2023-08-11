@@ -57,10 +57,11 @@ object Day2Part2 {
     fun calculateScore() =
         createPairsFromFile()
             .sumOf { (theirChoice, myResult) ->
-                myMapScores[determineChoice(
-                    theirChoice,
-                    secondColumnMap[myResult]!!
-                )]!! + secondColumnMap[myResult]!!.value
+                myMapScores[
+                    determineChoice(
+                        theirChoice,
+                        secondColumnMap[myResult]!!
+                    )]!! + secondColumnMap[myResult]!!.value
             }
 
     private fun determineChoice(theirChoice: String, result: Result): String =
