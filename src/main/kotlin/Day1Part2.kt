@@ -1,3 +1,6 @@
+import Day1Part1.createCalorieMap
+import java.io.File
+
 /*
 --- Part Two ---
 By the time you calculate the answer to the Elves' question, they've already realized that the Elf carrying the most
@@ -16,8 +19,10 @@ Find the top three Elves carrying the most Calories. How many Calories are those
 object Day1Part2 {
     @JvmStatic
     fun main(args: Array<String>) {
-        Day1Part1.createElfCalorieMap().values.sortedDescending().take(3).sum().also {
-            println("Top 3 Elves total calorie count: $it")
-        }
+        println("Top 3 Elves total calorie count: ${calculateTotal()}")
+    }
+
+    fun calculateTotal(): Int {
+        return createCalorieMap().values.sortedDescending().take(3).sum()
     }
 }
