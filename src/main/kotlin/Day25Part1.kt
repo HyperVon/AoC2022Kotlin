@@ -13,7 +13,7 @@ object Day25Part1 {
             .sumOf { it }
 
 
-    fun convertToDecimal(snafuString: String): Long {
+    private fun convertToDecimal(snafuString: String): Long {
         val charArray = snafuString.toCharArray()
         return charArray.mapIndexed { index, c ->
             val power = charArray.size - (index + 1).toDouble()
@@ -28,7 +28,7 @@ object Day25Part1 {
         }
     }
 
-    val snafuList by lazy {
+    private val snafuList by lazy {
         val list = mutableListOf<Pair<Long, Long>>()
         var prev = 0L
         for (i in 1..20) {
