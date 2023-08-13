@@ -9,6 +9,7 @@ object TestSuite {
     private const val DAY2_PART2_EXPECTED_SCORE = 13022
     private const val DAY3_PART1_EXPECTED_SCORE = 7831
     private const val DAY3_PART2_EXPECTED_SCORE = 2683
+    private const val DAY25_PART1_EXPECTED_VALUE = "2-20=01--0=0=0=2-120"
 
     @Test
     fun testDay1Part1() {
@@ -38,5 +39,10 @@ object TestSuite {
     @Test
     fun testDay3Part2() {
         assertEquals(DAY3_PART2_EXPECTED_SCORE, Day3Part2.calculateSum())
+    }
+
+    @Test
+    fun testDay25Part1() {
+        assertEquals(DAY25_PART1_EXPECTED_VALUE, Day25Part1.convertToSnafu(Day25Part1.calculateSum()))
     }
 }
