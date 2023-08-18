@@ -3,13 +3,11 @@ import Day3Part1.calculatePriority
 import java.io.File
 
 object Day3Part2 {
-
     fun calculateSum(): Int =
         File(FILE)
             .readLines()
-            .toList()
             .chunked(3)
-            .map { it[0].toSet().intersect(it[1].toSet()).intersect(it[2].toSet()).first() }
+            .map { it.fold(it.first().toSet()) { acc, str -> acc.intersect(str.toSet()) }.first() }
             .sumOf { calculatePriority(it) }
 
     @JvmStatic
