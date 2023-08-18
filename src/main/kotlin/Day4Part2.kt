@@ -4,7 +4,7 @@ object Day4Part2 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        calculateTotal().also { println(it) }
+        println(calculateTotal())
     }
 
     private fun contains(firstRange: IntRange, secondRange: IntRange) =

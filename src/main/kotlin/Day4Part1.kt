@@ -6,7 +6,7 @@ object Day4Part1 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        calculateTotal().also { println(it) }
+        println(calculateTotal())
     }
 
     fun createRanges() =

@@ -12,6 +12,6 @@ object Day3Part2 {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        calculateSum().also { println(it) }
+        println(calculateSum())
     }
 }
